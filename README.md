@@ -35,3 +35,9 @@ uv pip install -r requirements.txt
 ```
 
 The `requirements.txt` you already defined (`pydantic`, `pydantic-settings`, `python-dotenv`) will now be installed inside `.venv`, and any script run from the activated venv can import `config` and use `get_settings()`.
+
+## References
+
+1. [5 days of Intensive AI Agents Intensive](https://www.kaggle.com/learn-guide/5-day-agents)
+2. [Agentic AI](https://agenticai-learning.org/f25)
+3. [ADK](https://google.github.io/adk-docs/get-started/)
