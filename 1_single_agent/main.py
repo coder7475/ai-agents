@@ -16,17 +16,19 @@ async def call_llm(runner, query):
     )
 
 async def main():
-    # google_api_key = os.getenv("GOOGLE_API_KEY")
-    # print("Google API Key:", google_api_key)
-    # print(root_agent)
     runner = InMemoryRunner(agent=root_agent)
 
     print("✅ Runner created.")
 
     query = "What is the time in Chittagong?"
-    response = await call_llm(runner, query)
+    events = await call_llm(runner, query)
 
-    print(response)
+    print("Answer:")
+    for event in events:
+        if event.is_final_response() and event.content and event.content.parts:
+            for part in event.content.parts:
+                if getattr(part, "text", None):
+                    print(part.text)
 
 
 if __name__ == "__main__":
