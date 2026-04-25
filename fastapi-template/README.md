@@ -4,6 +4,12 @@ A minimal FastAPI project template built with uv.
 
 ## Quick Start
 
+install uv:
+
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 ```bash
 # Install dependencies
 uv sync
@@ -12,7 +18,7 @@ uv sync
 uv run uvicorn main:app --reload
 ```
 
-The API will be available at http://localhost:8000
+The API will be available at <http://localhost:8000>
 
 ## API Endpoints
 
@@ -40,3 +46,4 @@ uv run uvicorn main:app --reload
 # Add dependencies
 uv add <package>
 ```
+
