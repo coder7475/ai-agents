@@ -1,10 +1,25 @@
 # AI Agents
 
-This repository contains various AI agents developed for different purposes.
+This repository contains various AI agents developed using Google's ADK (Agent Development Kit).
 
-## Usage
+## Project Structure
 
-### 1 Create and activate venv
+```
+.
+├── 1_single_agent/       # Single agent implementation
+│   ├── config/           # Configuration settings
+│   ├── tools/            # Agent tools
+│   ├── agents/           # Agent definitions
+│   ├── services/         # Runner and execution logic
+│   └── main.py           # Entry point
+├── fastapi-template/     # FastAPI project template
+├── scripts/              # Utility scripts
+└── requirements.txt      # Shared dependencies
+```
+
+## Setup
+
+### 1. Create and activate venv
 
 ```bash
 # create venv
@@ -17,35 +32,34 @@ source .venv/bin/activate
 # .venv\Scripts\Activate.ps1
 ```
 
-This makes `.venv` local to the repo and isolates packages from the system.[3][2]
-
-### 2 Install required packages
-
-With pip:
+### 2. Install required packages
 
 ```bash
+# Upgrade pip and install dependencies
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Using `uv` as a faster drop-in (optional):
+Or using `uv` (faster drop-in replacement):
 
 ```bash
 uv pip install -r requirements.txt
 ```
 
-The `requirements.txt` you already defined (`pydantic`, `pydantic-settings`, `python-dotenv`) will now be installed inside `.venv`, and any script run from the activated venv can import `config` and use `get_settings()`.
+## Running Agents
 
-### Run agents
+### Single Agent
 
-1. Single Agen
+A simple agent that tells the current time in Bangladeshi cities.
 
-```sh
+```bash
 python3 1_single_agent/main.py
 ```
+
+Configuration can be modified in `1_single_agent/config/settings.py`.
 
 ## References
 
 1. [5 days of Intensive AI Agents Intensive](https://www.kaggle.com/learn-guide/5-day-agents)
 2. [Agentic AI](https://agenticai-learning.org/f25)
-3. [ADK](https://google.github.io/adk-docs/get-started/)
+3. [ADK Documentation](https://google.github.io/adk-docs/get-started/)
